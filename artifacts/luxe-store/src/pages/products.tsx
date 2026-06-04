@@ -22,6 +22,13 @@ export function Products() {
     setActiveCategory(categoryParam || undefined);
   }, [categoryParam]);
 
+  const formatCategoryLabel = (slug: string) => {
+    const labels: Record<string, string> = {
+      "sex-toys": "SexToy's",
+    };
+    return labels[slug] ?? slug;
+  };
+
   const handleCategorySelect = (slug?: string) => {
     if (slug) {
       setLocation(`/products?category=${slug}`);
@@ -36,7 +43,7 @@ export function Products() {
         
         {/* Page Header */}
         <div className="text-center mb-16 space-y-4">
-          <h1 className="font-serif text-4xl md:text-6xl">{activeCategory || "Showcase Product"}</h1>
+          <h1 className="font-serif text-4xl md:text-6xl">{activeCategory ? formatCategoryLabel(activeCategory) : "Showcase Product"}</h1>
           <p className="font-sans text-muted-foreground uppercase tracking-widest text-xs">
             {products?.length || 0} Pieces Available
           </p>
