@@ -25,6 +25,8 @@ export function Products() {
   const formatCategoryLabel = (slug: string) => {
     const labels: Record<string, string> = {
       "sex-toys": "SexToy's",
+      "accessories": "Accessories",
+      "lingerie": "Lingerie",
     };
     return labels[slug] ?? slug;
   };
