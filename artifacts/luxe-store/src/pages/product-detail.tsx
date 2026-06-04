@@ -137,7 +137,7 @@ export function ProductDetail() {
                 }`}
               >
                 <ShoppingBag className="w-4 h-4" />
-                {product.inStock ? "Beli di Shopee" : "Stok Habis"}
+                {product.inStock ? "Beli Produk" : "Stok Habis"}
               </a>
 
               {!product.inStock && (
