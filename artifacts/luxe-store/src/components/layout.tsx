@@ -122,8 +122,8 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
 
           <nav className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-widest font-sans">
-            <Link href="/products" className={`transition-colors hover:text-primary ${location === '/products' ? 'text-primary' : 'text-foreground/80'}`}>Boutique</Link>
-            <Link href="/categories" className={`transition-colors hover:text-primary ${location === '/categories' ? 'text-primary' : 'text-foreground/80'}`}>Collections</Link>
+            <Link href="/products" className={`transition-colors hover:text-primary ${location === '/products' ? 'text-primary' : 'text-foreground/80'}`}>Collection</Link>
+            <Link href="/categories" className={`transition-colors hover:text-primary ${location === '/categories' ? 'text-primary' : 'text-foreground/80'}`}>Categories</Link>
           </nav>
 
           <div className="flex-1 flex justify-center lg:flex-none">
@@ -149,8 +149,8 @@ export function Layout({ children }: { children: ReactNode }) {
             </div>
             <nav className="flex flex-col gap-6 text-2xl font-serif text-center">
               <Link href="/" onClick={closeMenu} className="hover:text-primary transition-colors">Home</Link>
-              <Link href="/products" onClick={closeMenu} className="hover:text-primary transition-colors">Boutique</Link>
-              <Link href="/categories" onClick={closeMenu} className="hover:text-primary transition-colors">Collections</Link>
+              <Link href="/products" onClick={closeMenu} className="hover:text-primary transition-colors">Collection</Link>
+              <Link href="/categories" onClick={closeMenu} className="hover:text-primary transition-colors">Categories</Link>
             </nav>
             <div className="mt-auto text-center font-sans text-sm text-muted-foreground uppercase tracking-widest">
               Intimacy, Refined.
