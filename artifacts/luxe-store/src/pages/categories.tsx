@@ -1,0 +1,72 @@
+import { Layout } from "@/components/layout";
+import { useListCategories } from "@workspace/api-client-react";
+import { Link } from "wouter";
+
+export function Categories() {
+  const { data: categories, isLoading } = useListCategories();
+
+  return (
+    <Layout>
+      <div className="bg-black text-white min-h-screen">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+          
+          <div className="text-center mb-24 max-w-2xl mx-auto space-y-6">
+            <h1 className="font-serif text-4xl md:text-6xl">The Collections</h1>
+            <p className="font-sans text-muted-foreground leading-relaxed font-light">
+              Explore our meticulously curated domains of pleasure. Each category represents a different facet of desire, waiting to be discovered.
+            </p>
+          </div>
+
+          <div className="space-y-24 md:space-y-40">
+            {isLoading ? (
+              <div className="space-y-24">
+                {[1, 2, 3].map(i => (
+                  <div key={i} className="h-64 bg-muted animate-pulse"></div>
+                ))}
+              </div>
+            ) : categories?.map((category, index) => {
+              const isEven = index % 2 === 0;
+              const gradientClass = category.slug.toLowerCase().includes('lingerie') 
+                ? 'gradient-card-lingerie' 
+                : category.slug.toLowerCase().includes('toys') 
+                  ? 'gradient-card-sextoys' 
+                  : 'gradient-card-accessories';
+
+              return (
+                <div key={category.slug} className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 lg:gap-24 group`}>
+                  
+                  {/* Image/Visual Area */}
+                  <div className="w-full md:w-1/2 aspect-[4/3] relative overflow-hidden bg-muted">
+                    <div className={`absolute inset-0 ${gradientClass} opacity-80 group-hover:scale-105 transition-transform duration-1000 ease-out`}></div>
+                    <div className="absolute inset-0 bg-black/20"></div>
+                  </div>
+
+                  {/* Content Area */}
+                  <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
+                    <div className="font-sans text-xs uppercase tracking-widest text-primary">
+                      {category.productCount} Pieces
+                    </div>
+                    <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl">{category.label}</h2>
+                    <p className="font-sans text-muted-foreground leading-relaxed font-light">
+                      {category.description || `Discover our exquisite collection of ${category.label.toLowerCase()}. Carefully selected for the discerning individual who accepts no compromises.`}
+                    </p>
+                    <div className="pt-6">
+                      <Link 
+                        href={`/products?category=${category.slug}`}
+                        className="inline-flex items-center gap-4 font-sans text-sm uppercase tracking-widest text-foreground hover:text-primary transition-colors group/link"
+                      >
+                        Explore Collection
+                        <span className="w-8 h-px bg-current group-hover/link:w-12 transition-all"></span>
+                      </Link>
+                    </div>
+                  </div>
+
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+}
