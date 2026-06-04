@@ -122,8 +122,8 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
 
           <nav className="hidden lg:flex items-center gap-8 text-sm uppercase tracking-widest font-sans">
-            <Link href="/products" className={`transition-colors hover:text-primary ${location === '/products' ? 'text-primary' : 'text-foreground/80'}`}>Showcase</Link>
-            <Link href="/categories" className={`transition-colors hover:text-primary ${location === '/categories' ? 'text-primary' : 'text-foreground/80'}`}>Collection</Link>
+            <Link href="/products" className={`transition-colors hover:text-primary ${location === '/products' ? 'text-primary' : 'text-foreground/80'}`}>SHOWCASE</Link>
+            <Link href="/categories" className={`transition-colors hover:text-primary ${location === '/categories' ? 'text-primary' : 'text-foreground/80'}`}>COLLECTION</Link>
           </nav>
 
           <div className="flex-1 flex justify-center lg:flex-none">
@@ -137,7 +137,6 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
       </header>
-
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm lg:hidden">
           <div className="flex flex-col h-full p-6">
@@ -157,11 +156,9 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
       )}
-
       <main className="flex-1">
         {children}
       </main>
-
       <footer className="border-t border-white/5 bg-black py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="space-y-4">
