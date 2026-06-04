@@ -1,15 +1,22 @@
 import { Layout } from "@/components/layout";
-import { useListCategories } from "@workspace/api-client-react";
+import { useListCategories, useListProducts } from "@workspace/api-client-react";
 import { Link } from "wouter";
+import { ProductCard } from "@/components/product-card";
 
 export function Categories() {
-  const { data: categories, isLoading } = useListCategories();
+  const { data: categories, isLoading: categoriesLoading } = useListCategories();
+  const { data: allProducts, isLoading: productsLoading } = useListProducts({});
+
+  const isLoading = categoriesLoading || productsLoading;
+
+  const productsByCategory = (slug: string) =>
+    allProducts?.filter(p => p.category?.toLowerCase() === slug.toLowerCase()) ?? [];
 
   return (
     <Layout>
       <div className="bg-black text-white min-h-screen">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          
+
           <div className="text-center mb-24 max-w-2xl mx-auto space-y-6">
             <h1 className="font-serif text-4xl md:text-6xl">The Collections</h1>
             <p className="font-sans text-muted-foreground leading-relaxed font-light">
@@ -17,7 +24,7 @@ export function Categories() {
             </p>
           </div>
 
-          <div className="space-y-24 md:space-y-40">
+          <div className="space-y-32 md:space-y-48">
             {isLoading ? (
               <div className="space-y-24">
                 {[1, 2, 3].map(i => (
@@ -26,41 +33,52 @@ export function Categories() {
               </div>
             ) : categories?.map((category, index) => {
               const isEven = index % 2 === 0;
-              const gradientClass = category.slug.toLowerCase().includes('lingerie') 
-                ? 'gradient-card-lingerie' 
-                : category.slug.toLowerCase().includes('toys') 
-                  ? 'gradient-card-sextoys' 
+              const gradientClass = category.slug.toLowerCase().includes('lingerie')
+                ? 'gradient-card-lingerie'
+                : category.slug.toLowerCase().includes('toys')
+                  ? 'gradient-card-sextoys'
                   : 'gradient-card-accessories';
 
+              const categoryProducts = productsByCategory(category.slug);
+
               return (
-                <div key={category.slug} className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 lg:gap-24 group`}>
-                  
-                  {/* Image/Visual Area */}
-                  <div className="w-full md:w-1/2 aspect-[4/3] relative overflow-hidden bg-muted">
-                    <div className={`absolute inset-0 ${gradientClass} opacity-80 group-hover:scale-105 transition-transform duration-1000 ease-out`}></div>
-                    <div className="absolute inset-0 bg-black/20"></div>
+                <div key={category.slug}>
+                  {/* Category Header */}
+                  <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 lg:gap-24 group mb-16`}>
+
+                    <div className="w-full md:w-1/2 aspect-[4/3] relative overflow-hidden bg-muted">
+                      <div className={`absolute inset-0 ${gradientClass} opacity-80 group-hover:scale-105 transition-transform duration-1000 ease-out`}></div>
+                      <div className="absolute inset-0 bg-black/20"></div>
+                    </div>
+
+                    <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
+                      <div className="font-sans text-xs uppercase tracking-widest text-primary">
+                        {category.productCount} Pieces
+                      </div>
+                      <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl">{category.label}</h2>
+                      <p className="font-sans text-muted-foreground leading-relaxed font-light">
+                        {category.description || `Discover our exquisite collection of ${category.label.toLowerCase()}. Carefully selected for the discerning individual who accepts no compromises.`}
+                      </p>
+                      <div className="pt-6">
+                        <Link
+                          href={`/products?category=${category.slug}`}
+                          className="inline-flex items-center gap-4 font-sans text-sm uppercase tracking-widest text-foreground hover:text-primary transition-colors group/link"
+                        >
+                          View All
+                          <span className="w-8 h-px bg-current group-hover/link:w-12 transition-all"></span>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Content Area */}
-                  <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
-                    <div className="font-sans text-xs uppercase tracking-widest text-primary">
-                      {category.productCount} Pieces
+                  {/* Products Grid */}
+                  {categoryProducts.length > 0 && (
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+                      {categoryProducts.map(product => (
+                        <ProductCard key={product.id} product={product} />
+                      ))}
                     </div>
-                    <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl">{category.label}</h2>
-                    <p className="font-sans text-muted-foreground leading-relaxed font-light">
-                      {category.description || `Discover our exquisite collection of ${category.label.toLowerCase()}. Carefully selected for the discerning individual who accepts no compromises.`}
-                    </p>
-                    <div className="pt-6">
-                      <Link 
-                        href={`/products?category=${category.slug}`}
-                        className="inline-flex items-center gap-4 font-sans text-sm uppercase tracking-widest text-foreground hover:text-primary transition-colors group/link"
-                      >
-                        Explore Collection
-                        <span className="w-8 h-px bg-current group-hover/link:w-12 transition-all"></span>
-                      </Link>
-                    </div>
-                  </div>
-
+                  )}
                 </div>
               );
             })}
