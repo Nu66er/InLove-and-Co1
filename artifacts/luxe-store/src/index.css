@@ -180,6 +180,12 @@
   will-change: filter, opacity, transform;
 }
 
+.effect-clarify-block {
+  display: block;
+  animation: clarify-in 1.8s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  will-change: filter, opacity, transform;
+}
+
 .gradient-card-lingerie {
   background: linear-gradient(135deg, hsl(310 50% 15%), hsl(280 40% 10%));
 }
