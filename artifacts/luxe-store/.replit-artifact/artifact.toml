@@ -1,6 +1,6 @@
 kind = "web"
 previewPath = "/"
-title = "Luxe Store"
+title = "InLove & Co."
 version = "1.0.0"
 id = "artifacts/luxe-store"
 router = "path"
