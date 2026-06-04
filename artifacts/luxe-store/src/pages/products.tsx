@@ -36,7 +36,7 @@ export function Products() {
         
         {/* Page Header */}
         <div className="text-center mb-16 space-y-4">
-          <h1 className="font-serif text-4xl md:text-6xl">{activeCategory || "The Boutique"}</h1>
+          <h1 className="font-serif text-4xl md:text-6xl">{activeCategory || "Showcase Product"}</h1>
           <p className="font-sans text-muted-foreground uppercase tracking-widest text-xs">
             {products?.length || 0} Pieces Available
           </p>
