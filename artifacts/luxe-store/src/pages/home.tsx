@@ -92,7 +92,7 @@ export function Home() {
             "True luxury is not about excess, but the perfection of the essential."
           </h2>
           <p className="font-sans text-muted-foreground leading-loose max-w-2xl mx-auto">
-            Velours was born from a singular desire: to create a space where adult pleasure is treated with the same reverence as haute couture. We source globally, curating only the most exquisite materials and forms.
+            InLove & Co. was born from a singular desire: to create a space where adult pleasure is treated with the same reverence as haute couture. We source globally, curating only the most exquisite materials and forms.
           </p>
         </div>
       </section>

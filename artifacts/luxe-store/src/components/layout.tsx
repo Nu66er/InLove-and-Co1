@@ -128,7 +128,7 @@ export function Layout({ children }: { children: ReactNode }) {
 
           <div className="flex-1 flex justify-center lg:flex-none">
             <Link href="/" className="font-serif text-3xl tracking-widest hover:opacity-80 transition-opacity">
-              VELOURS
+              InLove & Co.
             </Link>
           </div>
 
@@ -142,7 +142,7 @@ export function Layout({ children }: { children: ReactNode }) {
         <div className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm lg:hidden">
           <div className="flex flex-col h-full p-6">
             <div className="flex justify-between items-center mb-12">
-              <span className="font-serif text-2xl tracking-widest">VELOURS</span>
+              <span className="font-serif text-2xl tracking-widest">InLove & Co.</span>
               <button onClick={closeMenu} className="p-2 -mr-2 text-foreground hover:text-primary">
                 <X className="w-6 h-6" />
               </button>
@@ -166,7 +166,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <footer className="border-t border-white/5 bg-black py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="space-y-4">
-            <h3 className="font-serif text-2xl tracking-widest">VELOURS</h3>
+            <h3 className="font-serif text-2xl tracking-widest">InLove & Co.</h3>
             <p className="text-sm text-muted-foreground max-w-xs mx-auto md:mx-0">
               An exclusive sanctuary for desire. A Parisian atelier crossed with a high-end department store.
             </p>
@@ -191,7 +191,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16 pt-8 border-t border-white/5 text-center text-xs text-muted-foreground font-sans">
-          &copy; {new Date().getFullYear()} VELOURS. All rights reserved.
+          &copy; {new Date().getFullYear()} InLove & Co. All rights reserved.
         </div>
       </footer>
     </div>
