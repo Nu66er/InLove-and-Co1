@@ -17,7 +17,7 @@ export function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-[hsl(310,40%,6%)] z-0"></div>
         <div className="absolute inset-0 opacity-30 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[hsl(310,50%,20%)] via-black to-black z-0"></div>
         
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-8 animate-in fade-in zoom-in duration-1000">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-8 effect-clarify">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-none tracking-wide">
             <span className="effect-clarify">Intimacy,</span>
             {" "}<br/><span className="text-primary italic">Refined.</span>
