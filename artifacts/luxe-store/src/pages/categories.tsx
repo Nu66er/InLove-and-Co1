@@ -53,7 +53,7 @@ export function Categories() {
 
                     <div className="w-full md:w-1/2 text-center md:text-left space-y-6">
                       <div className="font-sans text-xs uppercase tracking-widest text-primary">
-                        {category.productCount} Pieces
+                        {category.productCount} Product
                       </div>
                       <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl">{category.label}</h2>
                       <p className="font-sans text-muted-foreground leading-relaxed font-light">

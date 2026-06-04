@@ -47,7 +47,7 @@ export function Products() {
         <div className="text-center mb-16 space-y-4">
           <h1 className="font-serif text-4xl md:text-6xl">{activeCategory ? formatCategoryLabel(activeCategory) : "Showcase Product"}</h1>
           <p className="font-sans text-muted-foreground uppercase tracking-widest text-xs">
-            {products?.length || 0} Pieces Available
+            {products?.length || 0} Product Available
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export function Products() {
                     onClick={() => handleCategorySelect()}
                     className={`transition-colors text-left w-full hover:text-primary ${!activeCategory ? 'text-primary' : 'text-muted-foreground'}`}
                   >
-                    All Pieces
+                    All Product
                   </button>
                 </li>
                 {categories?.map(cat => (
