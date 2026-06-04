@@ -153,7 +153,7 @@ export function Layout({ children }: { children: ReactNode }) {
               <Link href="/categories" onClick={closeMenu} className="hover:text-primary transition-colors">Collection</Link>
             </nav>
             <div className="mt-auto text-center font-sans text-sm text-muted-foreground uppercase tracking-widest">
-              Intimacy, Refined.
+              InLove & Co.
             </div>
           </div>
         </div>
