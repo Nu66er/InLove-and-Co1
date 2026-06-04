@@ -26,13 +26,10 @@ export function Home() {
             An exclusive sanctuary for desire. Enter a world where elegance meets indulgence.
           </p>
           <div className="pt-8">
-            <Link href="/products" className="inline-flex items-center justify-center bg-white text-black font-sans text-sm uppercase tracking-widest py-4 px-10 hover:bg-primary transition-colors">
-              Enter Boutique
-            </Link>
+            <Link href="/products" className="inline-flex items-center justify-center bg-white text-black font-sans text-sm uppercase tracking-widest py-4 px-10 hover:bg-primary transition-colors">enter showcase</Link>
           </div>
         </div>
       </section>
-
       {/* Featured Showcase */}
       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="container mx-auto">
@@ -63,7 +60,6 @@ export function Home() {
           )}
         </div>
       </section>
-
       {/* Category Highlights */}
       <section className="py-24 bg-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,7 +84,6 @@ export function Home() {
           </div>
         </div>
       </section>
-
       {/* Brand Story Teaser */}
       <section className="py-32 px-4 sm:px-6 lg:px-8 bg-background relative overflow-hidden">
         <div className="container mx-auto max-w-4xl text-center relative z-10">
