@@ -147,6 +147,7 @@ export function Layout({ children }: { children: ReactNode }) {
               </button>
             </div>
             <nav className="flex flex-col gap-6 text-2xl font-serif text-center">
+              <Link href="/" onClick={closeMenu} className="hover:text-primary transition-colors">Home</Link>
               <Link href="/products" onClick={closeMenu} className="hover:text-primary transition-colors">Showcase</Link>
               <Link href="/categories" onClick={closeMenu} className="hover:text-primary transition-colors">Collection</Link>
             </nav>
