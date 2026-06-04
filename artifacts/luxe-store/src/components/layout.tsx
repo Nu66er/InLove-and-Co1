@@ -172,9 +172,9 @@ export function Layout({ children }: { children: ReactNode }) {
             <h4 className="text-xs uppercase tracking-widest text-primary font-semibold mb-6">Explore</h4>
             <div className="flex flex-col gap-3 text-sm text-foreground/70">
               <Link href="/products?category=lingerie" className="hover:text-primary transition-colors">Lingerie</Link>
-              <Link href="/products?category=sex-toys" className="hover:text-primary transition-colors">Sex Toys</Link>
+              <Link href="/products?category=sex-toys" className="hover:text-primary transition-colors">SexToy's</Link>
               <Link href="/products?category=accessories" className="hover:text-primary transition-colors">Accessories</Link>
-              <Link href="/categories" className="hover:text-primary transition-colors">All Collections</Link>
+              <Link href="/categories" className="hover:text-primary transition-colors">All Collection</Link>
             </div>
           </div>
           <div className="space-y-4 font-sans">
