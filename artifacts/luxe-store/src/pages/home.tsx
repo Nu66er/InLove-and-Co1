@@ -20,7 +20,7 @@ export function Home() {
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-8 effect-clarify-block">
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl leading-none tracking-wide">
             <span className="effect-clarify">Intimacy,</span>
-            {" "}<br/><span className="text-primary italic">Refined.</span>
+            {" "}<br/><span className="text-primary italic effect-clarify">Refined.</span>
           </h1>
           <p className="font-sans text-sm md:text-base uppercase tracking-[0.2em] text-foreground/80 max-w-lg mx-auto">
             An exclusive sanctuary for desire. Enter a world where elegance meets indulgence.
