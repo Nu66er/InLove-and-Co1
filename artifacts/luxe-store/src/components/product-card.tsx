@@ -67,7 +67,6 @@ export function ProductCard({ product }: { product: Product }) {
 
       <div className="space-y-1">
         <h3 className="font-serif text-lg tracking-wide group-hover:text-primary transition-colors text-foreground">{product.name}</h3>
-        <p className="font-sans text-sm text-muted-foreground">Rp {product.price.toLocaleString("id-ID")}</p>
       </div>
     </Link>
   );

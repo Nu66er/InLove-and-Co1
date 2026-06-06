@@ -101,9 +101,6 @@ export function ProductDetail() {
               <h1 className="font-serif text-4xl md:text-5xl leading-tight">
                 {product.name}
               </h1>
-              <div className="font-sans text-2xl font-light">
-                Rp {product.price.toLocaleString("id-ID")}
-              </div>
             </div>
 
             <div className="prose prose-invert prose-p:font-sans prose-p:font-light prose-p:leading-loose text-muted-foreground mb-12">

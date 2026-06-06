@@ -65,9 +65,6 @@ function FavoritesPanel() {
                     <Link href={`/products/${product.id}`} className="font-serif text-base leading-tight hover:text-primary transition-colors line-clamp-2 block">
                       {product.name}
                     </Link>
-                    <p className="font-sans text-xs text-muted-foreground mt-1">
-                      Rp {product.price.toLocaleString("id-ID")}
-                    </p>
                   </div>
 
                   <a
