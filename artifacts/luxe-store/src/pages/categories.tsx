@@ -37,7 +37,9 @@ export function Categories() {
                 ? 'gradient-card-lingerie'
                 : category.slug.toLowerCase().includes('toys')
                   ? 'gradient-card-sextoys'
-                  : 'gradient-card-accessories';
+                  : category.slug.toLowerCase().includes('cosplay')
+                    ? 'gradient-card-cosplay'
+                    : 'gradient-card-accessories';
 
               const categoryProducts = productsByCategory(category.slug);
 

@@ -229,6 +229,10 @@ router.get("/categories", async (req, res) => {
         label: "Accessories",
         description: "Refined accessories to elevate every intimate moment.",
       },
+      cosplay: {
+        label: "Cosplay",
+        description: "Daring costumes and fantasy wear for every role you desire to embody.",
+      },
     };
 
     const categories = rows.map((r) => ({

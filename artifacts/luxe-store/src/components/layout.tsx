@@ -174,6 +174,7 @@ export function Layout({ children }: { children: ReactNode }) {
               <Link href="/products?category=lingerie" className="hover:text-primary transition-colors">Lingerie</Link>
               <Link href="/products?category=sex-toys" className="hover:text-primary transition-colors">SexToy's</Link>
               <Link href="/products?category=accessories" className="hover:text-primary transition-colors">Accessories</Link>
+              <Link href="/products?category=cosplay" className="hover:text-primary transition-colors">Cosplay</Link>
               <Link href="/categories" className="hover:text-primary transition-colors">All Collection</Link>
             </div>
           </div>

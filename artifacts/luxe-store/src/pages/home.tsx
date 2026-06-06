@@ -67,10 +67,15 @@ export function Home() {
             <h2 className="font-serif text-3xl md:text-4xl">The Collections</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {categories?.map((category, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {categories?.map((category) => {
+              const gradientClass = category.slug.includes('lingerie') ? 'gradient-card-lingerie'
+                : category.slug.includes('toys') ? 'gradient-card-sextoys'
+                : category.slug.includes('cosplay') ? 'gradient-card-cosplay'
+                : 'gradient-card-accessories';
+              return (
               <Link href={`/products?category=${category.slug}`} key={category.slug} className="group relative aspect-square overflow-hidden block">
-                <div className={`absolute inset-0 ${idx === 0 ? 'gradient-card-lingerie' : idx === 1 ? 'gradient-card-sextoys' : 'gradient-card-accessories'} opacity-60 group-hover:opacity-80 transition-opacity duration-700`}></div>
+                <div className={`absolute inset-0 ${gradientClass} opacity-60 group-hover:opacity-80 transition-opacity duration-700`}></div>
                 <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-700"></div>
                 
                 <div className="absolute inset-0 p-8 flex flex-col items-center justify-center text-center">
@@ -80,7 +85,8 @@ export function Home() {
                   </span>
                 </div>
               </Link>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

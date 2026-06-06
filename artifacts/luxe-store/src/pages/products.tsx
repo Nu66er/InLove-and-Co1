@@ -27,6 +27,7 @@ export function Products() {
       "sex-toys": "SexToy's",
       "accessories": "Accessories",
       "lingerie": "Lingerie",
+      "cosplay": "Cosplay",
     };
     return labels[slug] ?? slug;
   };
