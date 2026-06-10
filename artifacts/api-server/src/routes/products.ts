@@ -216,31 +216,39 @@ router.get("/categories", async (req, res) => {
       .from(productsTable)
       .groupBy(productsTable.category);
 
-    const categoryMeta: Record<string, { label: string; description: string }> = {
+    const categoryMeta: Record<string, { label: string; description: string; order: number }> = {
+      cosplay: {
+        label: "Cosplay",
+        description: "Daring costumes and fantasy wear for every role you desire to embody.",
+        order: 1,
+      },
       lingerie: {
         label: "Lingerie",
         description: "Exquisite intimates crafted for the discerning woman — lace, silk, and beyond.",
-      },
-      "sex-toys": {
-        label: "Sex Toys",
-        description: "Premium pleasure devices designed for exploration and exquisite sensation.",
+        order: 2,
       },
       accessories: {
         label: "Accessories",
         description: "Refined accessories to elevate every intimate moment.",
+        order: 3,
       },
-      cosplay: {
-        label: "Cosplay",
-        description: "Daring costumes and fantasy wear for every role you desire to embody.",
+      "sex-toys": {
+        label: "Sex Toys",
+        description: "Premium pleasure devices designed for exploration and exquisite sensation.",
+        order: 4,
       },
     };
 
-    const categories = rows.map((r) => ({
-      slug: r.category,
-      label: categoryMeta[r.category]?.label ?? r.category,
-      productCount: r.count,
-      description: categoryMeta[r.category]?.description ?? null,
-    }));
+    const categories = rows
+      .map((r) => ({
+        slug: r.category,
+        label: categoryMeta[r.category]?.label ?? r.category,
+        productCount: r.count,
+        description: categoryMeta[r.category]?.description ?? null,
+        order: categoryMeta[r.category]?.order ?? 99,
+      }))
+      .sort((a, b) => a.order - b.order)
+      .map(({ order: _order, ...rest }) => rest);
 
     res.json(categories);
   } catch (err) {
