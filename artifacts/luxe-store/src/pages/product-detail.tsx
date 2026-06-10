@@ -19,6 +19,7 @@ export function ProductDetail() {
   const getGradientClass = (category: string) => {
     if (category?.toLowerCase() === "lingerie") return "gradient-card-lingerie";
     if (category?.toLowerCase() === "sex-toys") return "gradient-card-sextoys";
+    if (category?.toLowerCase() === "cosplay") return "gradient-card-cosplay";
     return "gradient-card-accessories";
   };
 
