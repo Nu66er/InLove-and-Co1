@@ -69,7 +69,7 @@ router.get("/products", async (req, res) => {
       .select()
       .from(productsTable)
       .where(conditions.length > 0 ? and(...conditions) : undefined)
-      .orderBy(productsTable.createdAt);
+      .orderBy(productsTable.code, productsTable.createdAt);
 
     const products = rows.map((r) => ({
       ...r,
