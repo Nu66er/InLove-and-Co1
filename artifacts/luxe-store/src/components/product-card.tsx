@@ -67,14 +67,7 @@ export function ProductCard({ product }: { product: Product }) {
       </div>
 
       <div className="space-y-1">
-        <div className="flex items-center justify-between">
-          <h3 className="font-serif text-lg tracking-wide group-hover:text-primary transition-colors text-foreground">{product.name}</h3>
-          {product.code && (
-            <span className="font-sans text-[10px] uppercase tracking-widest text-muted-foreground border border-border/50 px-1.5 py-0.5 shrink-0 ml-2">
-              {product.code}
-            </span>
-          )}
-        </div>
+        <h3 className="font-serif text-lg tracking-wide group-hover:text-primary transition-colors text-foreground">{product.name}</h3>
       </div>
     </Link>
   );

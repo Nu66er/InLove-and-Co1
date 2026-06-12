@@ -114,8 +114,15 @@ export function ProductDetail() {
           {/* Details */}
           <div className="flex flex-col justify-center py-8">
             <div className="space-y-6 mb-10">
-              <div className="font-sans text-xs uppercase tracking-widest text-primary">
-                {product.category}
+              <div className="flex items-center gap-4">
+                <div className="font-sans text-xs uppercase tracking-widest text-primary">
+                  {product.category}
+                </div>
+                {product.code && (
+                  <span className="font-sans text-[10px] uppercase tracking-widest text-muted-foreground border border-border/50 px-2 py-1">
+                    {product.code}
+                  </span>
+                )}
               </div>
               <h1 className="font-serif text-4xl md:text-5xl leading-tight">
                 {product.name}
