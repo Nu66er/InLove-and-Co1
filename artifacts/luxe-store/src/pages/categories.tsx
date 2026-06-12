@@ -1,9 +1,8 @@
 import { Layout } from "@/components/layout";
-import { useListCategories, useListProducts } from "@workspace/api-client-react";
+import { ALL_CATEGORIES, ALL_PRODUCTS, Product } from "@/lib/static-data";
 import { Link } from "wouter";
 import { ProductCard } from "@/components/product-card";
 import { useState, useEffect } from "react";
-import { Product } from "@workspace/api-client-react/src/generated/api.schemas";
 
 function CategoryHeroSlider({
   products,
@@ -15,7 +14,7 @@ function CategoryHeroSlider({
   const images = products
     .filter(p => p.imageUrl)
     .slice(0, 5)
-    .map(p => p.imageUrl as string);
+    .map(p => p.imageUrl);
 
   const [current, setCurrent] = useState(0);
 
@@ -66,13 +65,10 @@ function CategoryHeroSlider({
 }
 
 export function Categories() {
-  const { data: categories, isLoading: categoriesLoading } = useListCategories();
-  const { data: allProducts, isLoading: productsLoading } = useListProducts({});
-
-  const isLoading = categoriesLoading || productsLoading;
+  const categories = ALL_CATEGORIES;
 
   const productsByCategory = (slug: string) =>
-    allProducts?.filter(p => p.category?.toLowerCase() === slug.toLowerCase()) ?? [];
+    ALL_PRODUCTS.filter(p => p.category?.toLowerCase() === slug.toLowerCase());
 
   return (
     <Layout>
@@ -87,13 +83,7 @@ export function Categories() {
           </div>
 
           <div className="space-y-32 md:space-y-48">
-            {isLoading ? (
-              <div className="space-y-24">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="h-64 bg-muted animate-pulse"></div>
-                ))}
-              </div>
-            ) : categories?.map((category, index) => {
+            {categories.map((category, index) => {
               const isEven = index % 2 === 0;
               const gradientClass = category.slug.toLowerCase().includes('lingerie')
                 ? 'gradient-card-lingerie'
@@ -107,9 +97,7 @@ export function Categories() {
 
               return (
                 <div key={category.slug}>
-                  {/* Category Header */}
                   <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 lg:gap-24 group mb-16`}>
-
                     <div className="w-full md:w-1/2 aspect-[4/3] relative overflow-hidden bg-muted">
                       <CategoryHeroSlider
                         products={categoryProducts}
@@ -123,7 +111,7 @@ export function Categories() {
                       </div>
                       <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl">{category.label}</h2>
                       <p className="font-sans text-muted-foreground leading-relaxed font-light">
-                        {category.description || `Discover our exquisite collection of ${category.label.toLowerCase()}. Carefully selected for the discerning individual who accepts no compromises.`}
+                        {category.description}
                       </p>
                       <div className="pt-6">
                         <Link
@@ -137,7 +125,6 @@ export function Categories() {
                     </div>
                   </div>
 
-                  {/* Products Grid */}
                   {categoryProducts.length > 0 && (
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
                       {categoryProducts.map(product => (

@@ -1,4 +1,4 @@
-import { Product } from "@workspace/api-client-react/src/generated/api.schemas";
+import { Product } from "@/lib/static-data";
 import { Link } from "wouter";
 import { Badge } from "@/components/ui/badge";
 import { Heart } from "lucide-react";

@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { Product } from "@workspace/api-client-react/src/generated/api.schemas";
+import { Product } from "@/lib/static-data";
 
 interface FavoritesContextType {
   favorites: Product[];
