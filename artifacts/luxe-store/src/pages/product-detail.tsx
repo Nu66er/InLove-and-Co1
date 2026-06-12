@@ -7,10 +7,24 @@ import { Loader2, Heart, ShoppingBag, ArrowLeft } from "lucide-react";
 import { Link } from "wouter";
 import { useFavorites } from "@/context/favorites";
 import { useToast } from "@/hooks/use-toast";
+import { useQuery } from "@tanstack/react-query";
+
+function useProductLinks() {
+  return useQuery<Record<string, string>>({
+    queryKey: ["product-links"],
+    queryFn: async () => {
+      const res = await fetch("/api/product-links");
+      if (!res.ok) return {};
+      return res.json();
+    },
+    staleTime: 60_000,
+  });
+}
 
 export function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const { data: product, isLoading, error } = useGetProduct(Number(id));
+  const { data: productLinks = {} } = useProductLinks();
   const { isFavorited, toggleFavorite } = useFavorites();
   const { toast } = useToast();
 
@@ -34,7 +48,11 @@ export function ProductDetail() {
     });
   };
 
-  const shopeeUrl = product
+  const productCode = (product as (typeof product & { code?: string }) | undefined)?.code ?? "";
+  const specificLink = productCode ? productLinks[productCode] : "";
+  const shopeeUrl = specificLink
+    ? specificLink
+    : product
     ? `https://shopee.co.id/search?keyword=${encodeURIComponent(product.name)}`
     : "https://shopee.co.id";
 
