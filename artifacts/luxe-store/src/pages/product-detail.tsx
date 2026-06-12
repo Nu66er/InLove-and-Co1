@@ -1,6 +1,7 @@
 import { Layout } from "@/components/layout";
 import { getProductById } from "@/lib/static-data";
 import { useParams } from "wouter";
+import rawLinks from "../../../../product-links/links.json";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Heart, ShoppingBag, ArrowLeft } from "lucide-react";
@@ -34,7 +35,18 @@ export function ProductDetail() {
     });
   };
 
-  const shopeeUrl = product
+  const productLinks: Record<string, string> = {};
+  for (const items of Object.values(rawLinks)) {
+    if (!Array.isArray(items)) continue;
+    for (const item of items as Array<{ code: string; link: string }>) {
+      if (item.code && item.link) productLinks[item.code] = item.link;
+    }
+  }
+
+  const specificLink = product?.code ? productLinks[product.code] : "";
+  const shopeeUrl = specificLink
+    ? specificLink
+    : product
     ? `https://shopee.co.id/search?keyword=${encodeURIComponent(product.name)}`
     : "https://shopee.co.id";
 

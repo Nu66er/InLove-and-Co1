@@ -1,241 +1,57 @@
 {
   "_info": "Isi field 'link' dengan URL toko (Tokopedia, Shopee, dll) sesuai kode produk. Kosongkan jika belum ada link.",
-  "accessories": [
-    {
-      "code": "ACC-001",
-      "name": "Crimson Desire Gift Set",
-      "link": ""
-    },
-    {
-      "code": "ACC-002",
-      "name": "Noir Leather Eye Mask",
-      "link": ""
-    },
-    {
-      "code": "ACC-003",
-      "name": "Black Lace Opera Gloves",
-      "link": ""
-    },
-    {
-      "code": "ACC-004",
-      "name": "Venetian Masquerade Mask",
-      "link": ""
-    },
-    {
-      "code": "ACC-005",
-      "name": "Fishnet Lace-Top Stockings",
-      "link": ""
-    },
-    {
-      "code": "ACC-006",
-      "name": "Leather Collar & Chain Leash",
-      "link": ""
-    },
-    {
-      "code": "ACC-007",
-      "name": "Steel Cuffs & Skeleton Keys",
-      "link": ""
-    },
-    {
-      "code": "ACC-008",
-      "name": "O-Ring Choker with Chains",
-      "link": ""
-    },
-    {
-      "code": "ACC-009",
-      "name": "Waist-to-Thigh Chain Harness",
-      "link": ""
-    }
-  ],
-  "sex-toys": [
-    {
-      "code": "TOY-001",
-      "name": "Aura Rabbit Vibrator",
-      "link": ""
-    },
-    {
-      "code": "TOY-002",
-      "name": "Obsidian Heated Bullet",
-      "link": ""
-    },
-    {
-      "code": "TOY-003",
-      "name": "Petal Duo Bullet Set",
-      "link": ""
-    },
-    {
-      "code": "TOY-004",
-      "name": "Lotus Wearable Egg",
-      "link": ""
-    },
-    {
-      "code": "TOY-005",
-      "name": "Swan Teardrop Egg",
-      "link": ""
-    },
-    {
-      "code": "TOY-006",
-      "name": "Rose Wave Vibrator",
-      "link": ""
-    },
-    {
-      "code": "TOY-007",
-      "name": "Crystal Vacuum Pump",
-      "link": ""
-    }
-  ],
   "cosplay": [
-    {
-      "code": "COS-001",
-      "name": "White Nurse Satin Set",
-      "link": ""
-    },
-    {
-      "code": "COS-002",
-      "name": "Blue Sailor Uniform",
-      "link": ""
-    },
-    {
-      "code": "COS-003",
-      "name": "Pink Nurse Fantasy Set",
-      "link": ""
-    },
-    {
-      "code": "COS-004",
-      "name": "Officer Authority Set",
-      "link": ""
-    },
-    {
-      "code": "COS-005",
-      "name": "Black Cat Mini Dress",
-      "link": ""
-    },
-    {
-      "code": "COS-006",
-      "name": "Navy Sailor Crop Set",
-      "link": ""
-    },
-    {
-      "code": "COS-007",
-      "name": "Floral Kimono Robe",
-      "link": ""
-    },
-    {
-      "code": "COS-008",
-      "name": "Sultry Secretary Set",
-      "link": ""
-    },
-    {
-      "code": "COS-009",
-      "name": "Black Cat Lace Corset",
-      "link": ""
-    },
-    {
-      "code": "COS-010",
-      "name": "Chain Suspender Set",
-      "link": ""
-    },
-    {
-      "code": "COS-011",
-      "name": "Cat Girl Cutout Set",
-      "link": ""
-    },
-    {
-      "code": "COS-012",
-      "name": "Gingham Maid Set",
-      "link": ""
-    },
-    {
-      "code": "COS-013",
-      "name": "First Class Stewardess",
-      "link": ""
-    },
-    {
-      "code": "COS-014",
-      "name": "Dark Web Bodysuit",
-      "link": ""
-    },
-    {
-      "code": "COS-015",
-      "name": "Plaid School Fantasy",
-      "link": ""
-    }
+    { "code": "COS-001", "name": "Nurse Costume Putih",          "link": "" },
+    { "code": "COS-002", "name": "Sailor Seragam Biru",          "link": "" },
+    { "code": "COS-003", "name": "Nurse Set Pink",               "link": "" },
+    { "code": "COS-004", "name": "Kostum Polisi",                "link": "" },
+    { "code": "COS-005", "name": "Cat Girl Hitam",               "link": "" },
+    { "code": "COS-006", "name": "Sailor Navy Mini",             "link": "" },
+    { "code": "COS-007", "name": "Kimono Bunga Hitam",           "link": "" },
+    { "code": "COS-008", "name": "Sekretaris Dasi",              "link": "" },
+    { "code": "COS-009", "name": "Cat Lady Renda",               "link": "" },
+    { "code": "COS-010", "name": "Suspender Set Putih",          "link": "" },
+    { "code": "COS-011", "name": "Cat Girl Set Hitam",           "link": "" },
+    { "code": "COS-012", "name": "Maid Kotak Biru",              "link": "" },
+    { "code": "COS-013", "name": "Pramugari",                    "link": "" },
+    { "code": "COS-014", "name": "Spider Girl Bodysuit",         "link": "" },
+    { "code": "COS-015", "name": "Seragam Tartan",               "link": "" }
   ],
   "lingerie": [
-    {
-      "code": "LNG-001",
-      "name": "Sheer Noir Shirt Set",
-      "link": ""
-    },
-    {
-      "code": "LNG-002",
-      "name": "Graphite Lace Halter",
-      "link": ""
-    },
-    {
-      "code": "LNG-003",
-      "name": "Obsidian Slip with Chain",
-      "link": ""
-    },
-    {
-      "code": "LNG-004",
-      "name": "Zen Noir Robe Set",
-      "link": ""
-    },
-    {
-      "code": "LNG-005",
-      "name": "Noir Off-Shoulder Lace Dress",
-      "link": ""
-    },
-    {
-      "code": "LNG-006",
-      "name": "Black Babydoll with Chain",
-      "link": ""
-    },
-    {
-      "code": "LNG-007",
-      "name": "Noir Corset Garter Set",
-      "link": ""
-    },
-    {
-      "code": "LNG-008",
-      "name": "Rose Bloom Cami Set",
-      "link": ""
-    },
-    {
-      "code": "LNG-009",
-      "name": "Pêche Satin Slip Dress",
-      "link": ""
-    },
-    {
-      "code": "LNG-010",
-      "name": "Crimson Satin Halter",
-      "link": ""
-    },
-    {
-      "code": "LNG-011",
-      "name": "Noir Botanica Corset",
-      "link": ""
-    },
-    {
-      "code": "LNG-012",
-      "name": "Scarlet Ruffle Babydoll",
-      "link": ""
-    },
-    {
-      "code": "LNG-013",
-      "name": "Champagne Bow Bodysuit",
-      "link": ""
-    },
-    {
-      "code": "LNG-014",
-      "name": "Wine Bow Babydoll",
-      "link": ""
-    },
-    {
-      "code": "LNG-015",
-      "name": "Rouge Satin Tiered Dress",
-      "link": ""
-    }
+    { "code": "LNG-001", "name": "Kemeja Transparan Hitam",      "link": "" },
+    { "code": "LNG-002", "name": "Set Abu Halter",               "link": "" },
+    { "code": "LNG-003", "name": "Mini Dress Satin Hitam",       "link": "" },
+    { "code": "LNG-004", "name": "Robe Renda Hitam",             "link": "" },
+    { "code": "LNG-005", "name": "Dress Renda Off-Shoulder",     "link": "" },
+    { "code": "LNG-006", "name": "Babydoll Hitam Pita",          "link": "" },
+    { "code": "LNG-007", "name": "Korset Renda Suspender",       "link": "" },
+    { "code": "LNG-008", "name": "Set Satin Floral Pink",        "link": "" },
+    { "code": "LNG-009", "name": "Slip Dress Pink Panjang",      "link": "" },
+    { "code": "LNG-010", "name": "Mini Dress Satin Merah",       "link": "" },
+    { "code": "LNG-011", "name": "Babydoll Renda Hitam Pita",    "link": "" },
+    { "code": "LNG-012", "name": "Babydoll Merah Ruffle",        "link": "" },
+    { "code": "LNG-013", "name": "Bodysuit Renda Krem Pita",     "link": "" },
+    { "code": "LNG-014", "name": "Mini Dress Maroon Pita",       "link": "" },
+    { "code": "LNG-015", "name": "Mini Dress Satin Merah Layer", "link": "" }
+  ],
+  "accessories": [
+    { "code": "ACC-001", "name": "Gift Set Merah",               "link": "" },
+    { "code": "ACC-002", "name": "Blindfold Kulit Hitam",        "link": "" },
+    { "code": "ACC-003", "name": "Sarung Tangan Renda Panjang",  "link": "" },
+    { "code": "ACC-004", "name": "Masker Venetian",              "link": "" },
+    { "code": "ACC-005", "name": "Stocking Jala Renda",          "link": "" },
+    { "code": "ACC-006", "name": "Collar Kulit + Rantai",        "link": "" },
+    { "code": "ACC-007", "name": "Borgol Metal + Kunci",         "link": "" },
+    { "code": "ACC-008", "name": "Choker Kulit O-Ring",          "link": "" },
+    { "code": "ACC-009", "name": "Harness Pinggang Rantai",      "link": "" }
+  ],
+  "sex-toys": [
+    { "code": "TOY-001", "name": "Vibrator Rabbit Aura",         "link": "" },
+    { "code": "TOY-002", "name": "Vibrator Peluru Hitam",        "link": "" },
+    { "code": "TOY-003", "name": "Mini Vibrator Pastel Duo",     "link": "" },
+    { "code": "TOY-004", "name": "Vibrator Telur Magenta",       "link": "" },
+    { "code": "TOY-005", "name": "Love Egg Magenta",             "link": "" },
+    { "code": "TOY-006", "name": "Vibrator Gelombang Pink",      "link": "" },
+    { "code": "TOY-007", "name": "Pompa Vakum Pria",             "link": "" }
   ]
 }
