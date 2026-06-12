@@ -11,6 +11,9 @@ export interface HealthStatus {
 
 export interface Product {
   id: number;
+  /** Product SKU code e.g. COS-001, LNG-007
+   * @nullable */
+  code?: string | null;
   name: string;
   /** @nullable */
   description?: string | null;

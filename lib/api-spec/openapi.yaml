@@ -184,6 +184,9 @@ components:
       properties:
         id:
           type: integer
+        code:
+          type: ["string", "null"]
+          description: "Product SKU code e.g. COS-001, LNG-007"
         name:
           type: string
         description:
