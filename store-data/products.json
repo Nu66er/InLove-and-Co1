@@ -12,7 +12,7 @@
     "isFeatured":  "true jika ingin tampil di halaman utama (Featured)."
   },
   "products": [
-    { "code": "COS-001", "name": "White Nurse Costume",          "description": "Elegant white satin nurse dress with classic nurse cap and delicate details.",                         "price": "320000", "link": "", "category": "cosplay",     "badge": "New",     "inStock": true, "isFeatured": true  },
+    { "code": "COS-001", "name": "White Nurse Costume",          "description": "Elegant white satin nurse dress with classic nurse cap and delicate details.",                         "price": "320000", "link": "https://s.shopee.co.id/4AxRjdvPl1?share_channel_code=2", "category": "cosplay",     "badge": "New",     "inStock": true, "isFeatured": true  },
     { "code": "COS-002", "name": "Blue Sailor Uniform",          "description": "Sky-blue sailor crop top with pencil skirt and authentic sailor accessories.",                         "price": "295000", "link": "", "category": "cosplay",     "badge": null,      "inStock": true, "isFeatured": false },
     { "code": "COS-003", "name": "Pink Nurse Set",               "description": "Open-front pink nurse set with stethoscope prop and lace detailing.",                                  "price": "280000", "link": "", "category": "cosplay",     "badge": null,      "inStock": true, "isFeatured": false },
     { "code": "COS-004", "name": "Police Costume",               "description": "Navy blue police bodysuit complete with belt accessories and badge.",                                  "price": "310000", "link": "", "category": "cosplay",     "badge": "Hot",     "inStock": true, "isFeatured": true  },
