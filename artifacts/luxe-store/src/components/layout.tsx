@@ -1,17 +1,11 @@
 import { ReactNode, useState } from "react";
 import { Link, useLocation } from "wouter";
-import { Menu, Heart, X, ShoppingBag, Trash2 } from "lucide-react";
+import { Menu, Heart, X, Trash2 } from "lucide-react";
 import { useFavorites } from "@/context/favorites";
-import { getProductLink } from "@/lib/static-data";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 function FavoritesPanel() {
   const { favorites, removeFavorite, count } = useFavorites();
-
-  const checkoutUrl = (code: string, name: string) => {
-    const specific = getProductLink(code);
-    return specific || `https://shopee.co.id/search?keyword=${encodeURIComponent(name)}`;
-  };
 
   return (
     <Sheet>
@@ -70,15 +64,6 @@ function FavoritesPanel() {
                     </Link>
                   </div>
 
-                  <a
-                    href={checkoutUrl(product.code, product.name)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 mt-3 font-sans text-[10px] uppercase tracking-widest bg-[#EE4D2D] text-white px-3 py-1.5 hover:bg-[#d63f20] transition-colors w-fit"
-                  >
-                    <ShoppingBag className="w-3 h-3" />
-                    Checkout
-                  </a>
                 </div>
 
                 <button
@@ -93,13 +78,6 @@ function FavoritesPanel() {
           </div>
         )}
 
-        {count > 0 && (
-          <div className="px-6 py-5 border-t border-white/10">
-            <p className="font-sans text-xs text-muted-foreground text-center leading-relaxed">
-              Klik "Checkout" pada setiap produk untuk melanjutkan pembelian.
-            </p>
-          </div>
-        )}
       </SheetContent>
     </Sheet>
   );
