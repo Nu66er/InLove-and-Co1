@@ -3,6 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, Heart, X, Trash2 } from "lucide-react";
 import { useFavorites } from "@/context/favorites";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import AgeVerification from "@/components/AgeVerification";
 
 function FavoritesPanel() {
   const { favorites, removeFavorite, count } = useFavorites();
@@ -91,6 +92,8 @@ export function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-primary selection:text-primary-foreground">
+      <AgeVerification />
+
       <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-4 lg:hidden">
