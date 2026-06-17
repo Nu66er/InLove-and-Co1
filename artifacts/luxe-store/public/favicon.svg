@@ -1,3 +1,8 @@
-<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="180" height="180" rx="36" fill="#FF3C00"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#0d0a08"/>
+  <!-- Gold lines -->
+  <line x1="8" y1="42" x2="26" y2="42" stroke="#c9a96e" stroke-width="1.2"/>
+  <line x1="38" y1="42" x2="56" y2="42" stroke="#c9a96e" stroke-width="1.2"/>
+  <!-- Heart -->
+  <path d="M32 40 C32 40 23 32 23 26 C23 22 25.8 19 29.2 19 C30.8 19 32 20.5 32 20.5 C32 20.5 33.2 19 34.8 19 C38.2 19 41 22 41 26 C41 32 32 40 32 40Z" fill="none" stroke="#c9a96e" stroke-width="1.5"/>
 </svg>
