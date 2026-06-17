@@ -64,7 +64,6 @@ function FavoritesPanel() {
                       {product.name}
                     </Link>
                   </div>
-
                 </div>
 
                 <button
@@ -88,7 +87,10 @@ export function Layout({ children }: { children: ReactNode }) {
   const [location] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const closeMenu = () => setMobileMenuOpen(false);
+  const closeMenu = () => {
+    setMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen flex flex-col selection:bg-primary selection:text-primary-foreground">
@@ -118,6 +120,7 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
       </header>
+
       {mobileMenuOpen && (
         <div className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm lg:hidden">
           <div className="flex flex-col h-full p-6">
@@ -138,9 +141,11 @@ export function Layout({ children }: { children: ReactNode }) {
           </div>
         </div>
       )}
+
       <main className="flex-1">
         {children}
       </main>
+
       <footer className="border-t border-white/5 bg-black py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
           <div className="space-y-4">
